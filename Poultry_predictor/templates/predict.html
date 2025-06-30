@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+      background: url("{{ url_for('static', filename='images/poultry_bg_predict.jpg') }}") no-repeat center center/cover;
+      color: white;
+    }
+
+    .result {
+      margin-top: 40px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 20px;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff9800;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧪 Prediction Result</h1>
+
+  <div class="result">
+    <p><strong>Disease Detected:</strong> {{ prediction }}</p>
+    <img src="{{ image_path }}" alt="Uploaded Image">
+  </div>
+
+  <br>
+  <a href="/" class="btn">Predict Another</a>
+
+</body>
+</html>
